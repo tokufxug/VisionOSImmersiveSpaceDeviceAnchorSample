@@ -7,23 +7,39 @@
 
 import SwiftUI
 import RealityKit
-import RealityKitContent
 
 struct ImmersiveView: View {
+    
+    private let appleVisionPro = AppleVisionPro()
+    private var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+    @State var entity: Entity?
+    
     var body: some View {
         RealityView { content in
-            // Add the initial RealityKit content
-            if let immersiveContentEntity = try? await Entity(named: "Immersive", in: realityKitContentBundle) {
-                content.add(immersiveContentEntity)
-
-                // Add an ImageBasedLight for the immersive content
-                guard let resource = try? await EnvironmentResource(named: "ImageBasedLight") else { return }
-                let iblComponent = ImageBasedLightComponent(source: .single(resource), intensityExponent: 0.25)
-                immersiveContentEntity.components.set(iblComponent)
-                immersiveContentEntity.components.set(ImageBasedLightReceiverComponent(imageBasedLight: immersiveContentEntity))
-
-                // Put skybox here.  See example in World project available at
-                // https://developer.apple.com/
+            Task {
+                await appleVisionPro.run()
+            }
+            entity = try? await Entity(named: "toy_car")
+            guard let resource = try? await EnvironmentResource(named: "ImageBasedLight") else { return }
+            
+            let iblComponent = ImageBasedLightComponent(source: .single(resource), intensityExponent: 0.1)
+            entity!.components.set(iblComponent)
+            entity!.components.set(ImageBasedLightReceiverComponent(imageBasedLight: entity!))
+       
+            content.add(entity!)
+        }
+        .onReceive(timer) { _ in
+            Task {
+                let transform = await appleVisionPro.getTransform()
+                if entity != nil {
+                    let t = Transform(matrix: transform!)
+                    entity!.orientation = t.rotation
+                    
+                    let posX = Float(transform?.columns.3.x ?? 0.0)
+                    let posY = Float(transform?.columns.3.y ?? 0.0)
+                    let posZ = Float(transform?.columns.3.z ?? 0.0) - 0.5
+                    entity!.position = [posX, posY, posZ]
+                }
             }
         }
     }

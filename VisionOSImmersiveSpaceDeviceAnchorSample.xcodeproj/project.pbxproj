@@ -15,6 +15,8 @@
 		1A9A591B2B58C26F009F2FDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A591A2B58C26F009F2FDB /* Assets.xcassets */; };
 		1A9A591E2B58C26F009F2FDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A591D2B58C26F009F2FDB /* Preview Assets.xcassets */; };
 		1A9A59292B58C270009F2FDB /* VisionOSImmersiveSpaceDeviceAnchorSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A59282B58C270009F2FDB /* VisionOSImmersiveSpaceDeviceAnchorSampleTests.swift */; };
+		1A9A59332B58C4EA009F2FDB /* AppleVisionPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A59322B58C4EA009F2FDB /* AppleVisionPro.swift */; };
+		1A9A59352B58C6A4009F2FDB /* toy_car.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A59342B58C6A4009F2FDB /* toy_car.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		1A9A591F2B58C26F009F2FDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A9A59242B58C270009F2FDB /* VisionOSImmersiveSpaceDeviceAnchorSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisionOSImmersiveSpaceDeviceAnchorSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9A59282B58C270009F2FDB /* VisionOSImmersiveSpaceDeviceAnchorSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionOSImmersiveSpaceDeviceAnchorSampleTests.swift; sourceTree = "<group>"; };
+		1A9A59322B58C4EA009F2FDB /* AppleVisionPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleVisionPro.swift; sourceTree = "<group>"; };
+		1A9A59342B58C6A4009F2FDB /* toy_car.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_car.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +86,11 @@
 		1A9A590D2B58C26F009F2FDB /* VisionOSImmersiveSpaceDeviceAnchorSample */ = {
 			isa = PBXGroup;
 			children = (
+				1A9A59342B58C6A4009F2FDB /* toy_car.usdz */,
 				1A9A59122B58C26F009F2FDB /* VisionOSImmersiveSpaceDeviceAnchorSampleApp.swift */,
 				1A9A59142B58C26F009F2FDB /* ContentView.swift */,
 				1A9A59162B58C26F009F2FDB /* ImmersiveView.swift */,
+				1A9A59322B58C4EA009F2FDB /* AppleVisionPro.swift */,
 				1A9A59182B58C26F009F2FDB /* ImageBasedLighting.skybox */,
 				1A9A591A2B58C26F009F2FDB /* Assets.xcassets */,
 				1A9A591F2B58C26F009F2FDB /* Info.plist */,
@@ -202,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A9A591B2B58C26F009F2FDB /* Assets.xcassets in Resources */,
+				1A9A59352B58C6A4009F2FDB /* toy_car.usdz in Resources */,
 				1A9A591E2B58C26F009F2FDB /* Preview Assets.xcassets in Resources */,
 				1A9A59192B58C26F009F2FDB /* ImageBasedLighting.skybox in Resources */,
 			);
@@ -223,6 +230,7 @@
 			files = (
 				1A9A59152B58C26F009F2FDB /* ContentView.swift in Sources */,
 				1A9A59132B58C26F009F2FDB /* VisionOSImmersiveSpaceDeviceAnchorSampleApp.swift in Sources */,
+				1A9A59332B58C4EA009F2FDB /* AppleVisionPro.swift in Sources */,
 				1A9A59172B58C26F009F2FDB /* ImmersiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
